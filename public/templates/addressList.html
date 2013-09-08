@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="span12">
+        <tabset>
+            <tab heading="Active Addresses"></tab>
+            <tab heading="Archived Addresses" active="showArchived"></tab>
+        </tabset>
+
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th class="address-label">Label</th>
+                <th class="address-address">Address</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-show="loading">
+                <td colspan="3"><img src="/images/spinner.gif" class="spinner"/>&nbsp;&nbsp;Loading...</td>
+            </tr>
+            <tr ng-repeat="item in addresses | archived:showArchived | orderBy:'label' ">
+                <td>{{ item.label }}</td>
+                <td>{{ item.address }} <a class="icon" ng-href="{{ 'http://blockchain.info/address/' + item.address }}"><i class="icon-external-link"> </i></a></td>
+                <td class="actions">
+                    <a class="icon" ng-click="qr(item)" title="Show QR Code"><i class="icon-dim icon-qrcode"></i></a>
+                    <a class="icon" ng-click="rename(item)" title="Change Label"><i class="icon-dim icon-tag"></i></a>
+                    <a class="icon" ng-click="toggleArchived(item)" ng-hide="showArchived" title="Archive Address"><i class="icon-dim icon-archive"></i></a>
+                    <a class="icon" ng-click="toggleArchived(item)" ng-show="showArchived" title="Restore Address"><i class="icon-dim icon-undo"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

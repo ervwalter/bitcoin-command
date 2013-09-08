@@ -1,0 +1,200 @@
+body {
+  padding-top: 60px;
+  overflow-y: scroll;
+
+  @media (max-width: 979px) {
+    padding-top: 0;
+  }
+}
+
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+  [class^="icon-"], [class*=" icon-"] {
+    color: #eb611f;
+  }
+
+}
+
+body.wait {
+  cursor: progress;
+
+  a, button {
+    cursor: progress !important;
+  }
+}
+
+.navbar .nav a {
+  cursor: pointer;
+}
+
+.button-bar {
+  margin-bottom: 15px;
+  .btn {
+    margin-bottom: 5px;
+  }
+}
+
+.bitcoin-flag {
+  width: 24px;
+  margin-top: -6px;
+}
+
+h1 {
+  font-size: $baseFontSize * 1.2;
+}
+
+h2 {
+  font-size: $baseFontSize;
+}
+
+h3 {
+  font-size: $baseFontSize;
+}
+
+h4 {
+  font-size: $baseFontSize;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 8px 0;
+  padding-left: 5px;
+}
+
+[class*="span"] > h1 {
+  margin-top: 0px;
+}
+
+h1, h2, h3 {
+  line-height: $baseLineHeight * 1.5;
+}
+
+h1, legend {
+  .summary {
+    padding-left: 15px;
+    font-weight: normal;
+    display: inline-block;
+    font-size: $baseFontSize * 0.9;
+
+    @media (max-width: 979px) {
+      padding-left: 0;
+      margin-bottom: 15px;
+      display: block;
+      line-height: 1.3em;
+
+    }
+  }
+}
+
+.table-condensed {
+  width: auto;
+  max-width: 100%;
+  font-size: $baseFontSize * 0.8;
+
+  td, th {
+    padding: 2px 15px;
+  }
+}
+
+.table-footer {
+  margin-top: 10px;
+  font-size: $baseFontSize * 0.8;
+}
+
+td.center {
+  text-align: center;
+}
+
+.green {
+  color: $green;
+}
+
+.red {
+  color: $red;
+}
+
+.field-validation-valid {
+  display: none !important;
+}
+
+legend + .control-group {
+  margin-top: 0;
+}
+
+.icon-dim {
+  color: #999;
+}
+
+.icon-dim:hover {
+  color: $linkColor;
+}
+
+//.form-horizontal legend {
+//	padding-left: 180px;
+//	width: auto;
+//	padding-right: 100px;
+//}
+
+.btn-small .caret {
+  margin-top: 10px;
+}
+
+.small, .small a {
+  font-size: $baseFontSize * 0.8;
+}
+
+.dropdown-menu.small {
+  margin-top: -2px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.status-messages {
+  margin-top: 20px;
+}
+
+.spinner {
+  margin-top: -3px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.table-condensed a.icon {
+  font-size: 17px;
+}
+
+.table a.icon:hover {
+  text-decoration: none;
+}
+
+.icon-external-link {
+  font-size: 80%;
+  vertical-align: text-bottom;
+}
+
+td.actions {
+  a {
+    padding: 0 3px;
+  }
+}
+
+.address-label {
+  min-width: 200px;
+}
+
+.address-address {
+  min-width: 350px;
+}
+
+@media (max-width: 979px) {
+  .address-address, .address-label {
+    min-width: 0;
+  }
+}
+
+.not-bold {
+  font-weight: normal;
+}

@@ -1,0 +1,20 @@
+<table class="table table-condensed table-hover" id="transactions">
+    <thead>
+    <tr>
+        <th class="tx-date">Date</th>
+        <th class="tx-time">Time</th>
+        <th class="tx-confirmed">✓</th>
+        <th class="tx-description">Description</th>
+        <th class="tx-amount">Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="tx in transactions" ng-class="{ confirmed: tx.confirmed, unconfirmed: !tx.confirmed }">
+        <td class="tx-date">{{ tx.time * 1000 | date:'shortDate' }}</td>
+        <td class="tx-time">{{ tx.time * 1000 | date:'shortTime' }}</td>
+        <td class="tx-confirmed">{{ tx | confirmationCount }}</td>
+        <td class="tx-description"><a ng-href="http://blockchain.info/tx/{{ tx.txid }}">{{ tx | transactionDescription }}</a></td>
+        <td class="tx-amount" ng-class="{ green: tx.amount > 0, red: tx.amount < 0 }">{{ tx.amount | bitcoin }}</td>
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="span12">
+        <form name="form" valid-submit="send(tx)" autocomplete="off">
+            <fieldset>
+                <legend>Send Bitcoins  <div class="summary">Available Balance: <b>{{ wallet.balance }}</b></div></legend>
+                <control-group for="address">
+                    <div class="controls" id="addressFields">
+                        <input type="text" name="address" class="span4" ng-model="tx.address"
+                               placeholder="Address" ng-required="true"
+                               typeahead="item.address as item.name + ' - ' + item.address for item in recentRecipients | filter:$viewValue | limitTo:8"
+                               typeahead-on-select="selectedAddress($item)"
+                               autofocus="true" ng-disabled="sending" />
+                        <validation-message for="address" required="Address is required."
+                                pattern="Enter a valid bitcoin address"/>
+                    </div>
+                </control-group>
+                <control-group for="name">
+                    <div class="controls">
+                        <input type="text" name="name" class="span4" ng-model="tx.name"
+                               placeholder="Name" ng-disabled="sending" />
+                    </div>
+                </control-group>
+                <control-group for="amount">
+                    <div class="controls">
+                        <input type="text" name="amount" class="span2" ng-model="tx.amount"
+                               placeholder="Amount" ng-pattern="/[-+]?[0-9]*\.?[0-9]+/"
+                               ui-validate="{ positive: 'positive($value)', balance: 'underBalance($value)' }"
+                               ng-required="true" ng-disabled="sending" />
+                        <validation-message for="amount" required="Amount is required."
+                                            pattern="Enter a valid number." positive="Amount must be &gt; 0."
+                                            balance="Insufficient funds. Check your balance." />
+                    </div>
+                </control-group>
+                <control-group for="comment">
+                    <div class="controls">
+                        <input type="text" name="comment" class="span4" ng-model="tx.comment"
+                               placeholder="Comment" ng-disabled="sending" />
+                    </div>
+                </control-group>
+                <control-group for="passphrase">
+                    <div class="controls">
+                        <input type="password" name="passphrase" class="span4" ng-model="tx.passphrase"
+                               placeholder="Passphrase" ng-required="true"  ng-disabled="sending" />
+                        <validation-message for="passphrase" required="Enter your wallet passphrase." />
+                    </div>
+                </control-group>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-success" ng-disabled="sending">Send</button>
+                        <button onclick="history.back();return false;" class="btn" ng-disabled="sending">Cancel</button>
+                    </div>
+                </div>
+                <div ng-show="sending || error" class="status-messages">
+                    <div ng-hide="error"><img src="/images/spinner.gif" class="spinner"/>&nbsp;&nbsp;Sending Transaction...</div>
+                    <div ng-show="error" class="text-error">{{ error }}</div>
+                </div>
+            </fieldset>
+        </form>
+
+<!--        <pre>{{tx | prettyJson}}</pre>
+        <pre>{{form.address | prettyJson}}</pre>-->
+    </div>
+</div>
+
+        <!-- ng-pattern="/^[13][1-9A-Za-z][^OIl]{20,40}$/" -->

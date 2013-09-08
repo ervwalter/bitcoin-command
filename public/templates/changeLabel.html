@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h3>Label for <span class="not-bold">{{ address }}</span></h3>
+</div>
+<div class="modal-body">
+    <div><input type="text" class="span5" id="prompt-value" ng-model="label" placeholder="New Label" autofocus/></div>
+    <div>(previously was: '{{ initial }}')</div>
+</div>
+<div class="modal-footer">
+    <button ng-click="save()" class="btn btn-success">Change Label</button>
+    <button ng-click="cancel()" class="btn">Cancel</button>
+</div>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="266.59711"
+   height="266.59711"
+   viewbox="0 0 266.59711 266.59711"
+   viewBox="0 0 266.59711 266.59711"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="flag.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3816">
+      <stop
+         style="stop-color:#fff12f;stop-opacity:1;"
+         offset="0"
+         id="stop3818" />
+      <stop
+         id="stop3824"
+         offset="0.5"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+      <stop
+         style="stop-color:#e69a00;stop-opacity:1;"
+         offset="1"
+         id="stop3820" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.05685"
+     inkscape:cx="3.8383142"
+     inkscape:cy="107.48488"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1440"
+     inkscape:window-height="852"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-grids="false"
+     inkscape:snap-to-guides="true"
+     inkscape:snap-page="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2985"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(9.2863755e-7,-552.36218)">
+    <g
+       id="g3961"
+       transform="matrix(0.84999999,0,0,0.84999999,-2197.7633,-2642.8401)"
+       style="stroke:#ffffff;stroke-opacity:1"
+       inkscape:export-filename="/Users/raphael/Documents/WORK/EUX/Ecogex/Bitcoin Logo/pack/flag.png"
+       inkscape:export-xdpi="50.639999"
+       inkscape:export-ydpi="50.639999" />
+    <g
+       id="g3140"
+       transform="translate(-40.214907,347.91648)"
+       inkscape:export-filename="/Users/raphael/Documents/WORK/EUX/Ecogex/Bitcoin Logo/pack/flag.png"
+       inkscape:export-xdpi="50.639999"
+       inkscape:export-ydpi="50.639999">
+      <g
+         transform="translate(-452.49644,-452.00029)"
+         id="g3131"
+         inkscape:export-filename="/Users/raphael/Documents/WORK/EUX/Ecogex/Bitcoin Logo/flag.png"
+         inkscape:export-xdpi="103.67"
+         inkscape:export-ydpi="103.67">
+        <g
+           id="g3126"
+           transform="matrix(3.0707737,0,0,3.0707737,-1292.9698,-1635.3824)">
+          <rect
+             ry="0"
+             y="746.33582"
+             x="581.50854"
+             height="86.817566"
+             width="86.817566"
+             id="rect4453"
+             style="fill:#dbdbdb;fill-opacity:1;stroke:none"
+             rx="0" />
+          <rect
+             y="746.33582"
+             x="581.50854"
+             height="10.852196"
+             width="86.817558"
+             id="rect4455"
+             style="fill:#eb611f;fill-opacity:1;stroke:none" />
+          <rect
+             style="fill:#848484;fill-opacity:1;stroke:none"
+             id="rect4457"
+             width="86.817566"
+             height="10.852196"
+             x="581.50854"
+             y="822.30115" />
+        </g>
+        <g
+           id="g3122">
+          <path
+             transform="matrix(0.41655795,0,0,0.41655795,192.78969,-615.91205)"
+             style="fill:#ffffff;fill-opacity:1;stroke:none"
+             d="m 1320,3372.3623 c 0,154.6397 -125.3603,280 -280,280 -154.63973,0 -280,-125.3603 -280,-280 0,-154.6397 125.36027,-280 280,-280 154.6397,0 280,125.3603 280,280 z"
+             id="path4459"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path4599"
+             d="m 584.48076,706.73744 0,9.24242 0,100.07805 -21.29646,0 0,18.47193 21.29646,0 0,28.01344 0,9.22952 9.24235,0 48.85445,0 c 0,0 11.09188,0.12283 22.45506,-5.55871 11.36321,-5.68155 23.4184,-18.91597 23.4184,-40.31496 0,-20.23579 -8.81395,-33.48126 -18.73212,-40.47127 7.02071,-6.82418 12.62696,-17.70116 12.62696,-32.80384 0,-20.88618 -9.7845,-34.01189 -19.74753,-39.98977 -9.96285,-5.97757 -20.02077,-5.89681 -20.02077,-5.89681 l -48.85445,0 -9.24235,0 z m 18.48471,18.47194 39.61209,0 c 0,0 5.21414,0.0829 10.51801,3.2673 5.30403,3.18255 10.77842,8.39273 10.77842,24.14734 0,14.84657 -5.20969,19.26695 -10.45292,22.12953 -4.84737,2.6467 -9.59322,2.80116 -10.30984,2.8119 -0.19838,0 -0.31553,0.0307 -0.53367,0.0307 0,0 -0.0123,0 -0.0123,0 l -39.59907,0 0,-52.36928 z m 40.52334,70.8148 c 1.45889,0 7.43483,0.16889 13.25174,3.09811 6.6883,3.36679 13.23875,8.87054 13.23875,26.77684 0,15.24147 -6.25557,20.31716 -13.21271,23.79604 -6.95712,3.47857 -14.18903,3.60539 -14.18903,3.60539 l -39.61209,0 0,-18.77072 33.50693,0 0,-18.47193 -33.50693,0 0,-20.00793 39.35169,0 c 0,0 0.17442,0 0.2604,0 0.18087,0 0.36827,-0.0307 0.54684,-0.0307 0.0123,0 0.0276,0 0.0387,0 0.0123,0 0.11638,-0.0307 0.3255,-0.0307 z"
+             style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;stroke:none;stroke-width:60.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

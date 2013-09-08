@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bitcoinApp">
+<head>
+    <meta charset="utf-8"/>
+    <title ng-bind-template="{{ pageTitle }} - Bitcoin Command Center">Bitcoin Command Center</title>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="/stylesheets/screen.css"/>
+
+</head>
+<body>
+
+<img src="/images/spinner.gif" style="display:none;" />
+
+<div class="container">
+
+    <section id="navbar" ng-controller="NavbarCtrl" ng-cloak>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" ng-click="navCollapsed = !navCollapsed">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <div class="brand hidden-desktop">
+                        <img class="bitcoin-flag" src="/images/flag.svg"/>
+                        Command Center
+                    </div>
+                    <div class="nav-collapse" collapse="navCollapsed">
+                        <ul class="nav">
+                            <li ng-show="authenticated"><a href="#/dashboard" reload><i class="icon-bars"></i>&nbsp;Dashboard</a></li>
+                            <li ng-show="authenticated"><a href="#/wallet" reload><i class="icon-bitcoin"></i>&nbsp;Wallet</a></li>
+                            <li ng-show="authenticated"><a href="#/pools" reload><i class="icon-cloud"></i>&nbsp;Pools</a></li>
+                            <li ng-show="authenticated"><a ng-click="logout()"><i class="icon-exit"></i>&nbsp;Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="pull-right">
+                        <div class="brand visible-desktop">
+                            <img class="bitcoin-flag" src="images/flag.svg"/>
+                            Bitcoin Command Center
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <ng-view></ng-view>
+
+</div>
+
+<br/>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/scripts/compiled/libraries.js"></script>
+<script src="/scripts/compiled/app.js"></script>
+<script src="/scripts/compiled/templates.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="span12">
+        <form ng-submit="save(pool)" class="form-horizontal">
+            <fieldset>
+                <legend>Pool Details</legend>
+                <div class="control-group">
+                    <label for="name" class="control-label">Name</label>
+                    <div class="controls">
+                        <input type="text" id="name" class="span3" ng-model="pool.name" required/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="url" class="control-label">URL</label>
+                    <div class="controls">
+                        <input type="text" id="url" class="span7" ng-model="pool.url" required/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="apiType" class="control-label">API Type</label>
+                    <div class="controls">
+                        <input type="text" id="apiType" class="span3" ng-model="pool.apiType"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="apiKey" class="control-label">API Key</label>
+                    <div class="controls">
+                        <input type="text" id="apiKey" class="span7" ng-model="pool.apiKey"/>
+                    </div>
+                </div>
+<!--
+                <div class="control-group">
+                    <label for="apiParams" class="control-label">API Params</label>
+                    <div class="controls">
+                        <input type="text" id="apiParams" class="span7" ng-model="pool.apiParams"/>
+                    </div>
+                </div>
+-->
+                <div class="control-group">
+                    <label for="payoutAddress" class="control-label">Payout Address</label>
+                    <div class="controls">
+                        <input type="text" id="payoutAddress" class="span7" ng-model="pool.payoutAddress"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="payoutAliases" class="control-label">Payout Aliases</label>
+                    <div class="controls">
+                        <input type="text" id="payoutAliases" class="span3" ng-model="pool.payoutAliases"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button id="save" type="submit" class="btn btn-success">Save Settings</button>
+                        <button id="cancel" onclick="history.back();return false;" class="btn">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+

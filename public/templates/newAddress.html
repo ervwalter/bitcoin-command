@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h3>New Address</span></h3>
+</div>
+<div class="modal-body">
+    <div ng-show="state == 'prompt'"><input type="text" class="span5" id="prompt-value" ng-model="label" placeholder="Address Label" autofocus/></div>
+    <div ng-show="state == 'creating'"><img src="/images/spinner.gif" />&nbsp;&nbsp;Creating Address...</div>
+    <div ng-show="state == 'created'">
+        <p>{{ address }} (<b>{{ label }}</b>)</p>
+        <p><img ng-src="http://chart.apis.google.com/chart?cht=qr&chld=Q|2&chs=200&chl={{ address }}" /></p>
+    </div>
+    <div ng-show="state == 'error'" class="text-error">An error occurred.  Try again later.</div>
+</div>
+<div class="modal-footer">
+    <button ng-hide="state == 'created' || state == 'error'" ng-disabled="state == 'creating'" ng-click="create()" class="btn btn-success">Create Address</button>
+    <button ng-hide="state == 'created' || state == 'error'" ng-disabled="state == 'creating'"  ng-click="close()" class="btn">Cancel</button>
+    <button ng-show="state == 'created' || state == 'error'" ng-click="close()" class="btn btn-success">OK</button>
+</div>

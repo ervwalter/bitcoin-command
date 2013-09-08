@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="span12">
+        <h1><i class="icon-bitcoin orange"></i>&nbsp;Transactions
+            <div class="summary">
+                Balance: <b>{{ wallet.balance | number:4 }}</b>&nbsp;BTC
+            </div>
+        </h1>
+
+        <div class="button-bar">
+            <a class="btn btn-small" href="#/wallet/send"><i class="icon-arrow-right"></i>&nbsp;Send Bitcoins</a>
+            <a class="btn btn-small" href="" ng-click="newAddress()"><i class="icon-plus"></i>&nbsp;New Address</a>&nbsp;
+            <div class="btn-group">
+                <a class="btn btn-small" href="#/wallet/addresses"><i class="icon-th-list"></i>&nbsp;List Addresses</a>
+            </div>
+        </div>
+
+        <p class="table-footer muted">
+            <span ng-show="wallet.more && count != 'all'">Last {{ count }} transactions shown.</span>
+            <span ng-hide="wallet.more && count != 'all'">All transactions shown.</span>
+            Show <a href="" ng-click="show(50)">50</a>, <a href="" ng-click="show(100)">100</a>, <a href="" ng-click="show(250)">250</a>, <a href="" ng-click="show(500)">500</a>, <a href="" ng-click="show(1000)">1000</a>, or <a href="" ng-click="show('all')">all</a> transactions.
+        </p>
+
+        <transaction-list transactions="wallet.transactions" />
+
+        <div>odd</div>
+
+    </div>
+</div>

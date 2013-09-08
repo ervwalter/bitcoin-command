@@ -1,0 +1,290 @@
+@import "compass/css3/border-radius";
+
+[class*="span"] {
+  padding-bottom: 10px;
+}
+
+.infobox-container {
+  //	text-align: center;
+}
+
+.infobox {
+  display: inline-block;
+  text-align: left;
+  width: 400px;
+  height: 50px;
+  background-color: #fff;
+  margin: 4px 0;
+  padding: 10px 10px;
+  border: 1px solid #d8d8d8;
+  vertical-align: middle;
+  position: relative;
+}
+
+.infobox-icon {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  @include border-radius(100%);
+
+  i {
+    font-style: normal;
+    display: inline-block;
+    padding: 8px 0;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+.infobox-btc .infobox-icon {
+  background-color: $orange;
+  i {
+    padding: 7px 0;
+  }
+}
+
+.infobox-usd .infobox-icon {
+  background-color: $green;
+}
+
+.infobox-speed .infobox-icon {
+  background-color: $blue;
+  i {
+    padding: 5px 0 0 1px;
+  }
+}
+
+.pulse {
+  opacity: 0;
+}
+
+.pulse-pool {
+  background-color: rgba(0, 99, 172, 0.6)
+}
+
+.pulse-device {
+  background-color: rgba(28, 155, 71, 0.6)
+}
+
+
+.infobox-data {
+  display: inline-block;
+  width: 100px;
+  line-height: 20px;
+  margin-top: 4px;
+  padding: 0 20px;
+}
+
+.infobox-value {
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.infobox-caption {
+  font-size: 80%;
+}
+
+.infobox-message {
+  //text-align: center;
+  padding-left: 10px;
+  font-size: 120%;
+  padding-top: 12px;
+}
+
+#chart {
+  height: 280px;
+  margin: 4px 0;
+
+  .loading {
+    line-height: 280px;
+    text-align: center;
+    font-size: 150%;
+    font-style: italic;
+    color: #ddd;
+  }
+}
+
+.orange {
+  color: $orange;
+}
+
+.device-host {
+  font-weight: bold;
+  padding: 0 0 8px 12px;
+}
+
+.table {
+  @include border-radius(8px);
+  background-color: darken($bodyBackground, 2.5%);
+  margin-bottom: 0;
+
+  td {
+    white-space: nowrap;
+  }
+
+  .tx-confirmed {
+    text-align: center;
+  }
+
+  .tx-description {
+    min-width: 300px;
+  }
+
+  a, a:active, a:visited {
+    color: $textColor;
+  }
+
+  a:hover {
+    color: $linkColor;
+  }
+
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .green {
+    color: #1c9b47;
+  }
+
+  .red {
+    color: #cf0001;
+  }
+
+  .unconfirmed, .unconfirmed a, .unconfirmed .red, .unconfirmed .green {
+    font-style: italic;
+    color: lighten($textColor, 40%);
+  }
+
+  .pool-hashrate, .pool-shares, .pool-reject, .pool-pending, .pool-payouts, .pool-size {
+    text-align: right;
+  }
+
+  .device-rate, .device-shares, .device-reject, .device-temp {
+    text-align: right;
+  }
+
+  .device-activity, .pool-activity {
+    padding: 10px 0 0 5px;
+    div {
+      width: 10px;
+      height: 10px;
+      //			border: 1px solid #ccc;
+      @include border-radius(100%);
+    }
+  }
+
+  .device-id, .pool-name {
+    padding-left: 5px;
+  }
+
+}
+
+@media (max-width: 979px) {
+  #chart {
+    height: 225px;
+
+    .loading {
+      line-height: 225px;
+    }
+  }
+
+  .infobox-container {
+    text-align: center;
+  }
+
+  .infobox {
+    width: 260px;
+    height: 40px;
+    padding: 8px 6px;
+    font-size: 80%;
+  }
+
+  .infobox-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+
+    i {
+      padding: 5px 0;
+      font-size: 1.8em;
+    }
+  }
+
+  .infobox-data {
+    width: 80px;
+    line-height: 16px;
+    margin-top: 4px;
+    padding: 0 5px;
+  }
+
+  .infobox-btc .infobox-icon i {
+    padding: 5px 0;
+  }
+
+  .infobox-speed .infobox-icon {
+    img {
+      width: 24px;
+      margin: 7px 6px;
+    }
+  }
+
+  .infobox-message {
+    padding-top: 7px;
+  }
+
+
+  .tx-date, .tx-time, .tx-confirmsed {
+    display: none;
+  }
+
+  .tx-confirmed {
+    width: 15%;
+  }
+
+  .tx-description {
+    min-width: auto;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .tx-amount {
+    width: 25%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #transactions {
+    table-layout: fixed;
+  }
+
+  .table-condensed {
+    font-size: $baseFontSize * 0.7;
+    width: 100%;
+
+    td, th {
+      padding: 3px 8px;
+    }
+
+  }
+
+  .pool-shares, .pool-reject, .pool-payouts, .pool-size {
+    display: none;
+  }
+
+  .device-type, .device-shares, .device-reject, .device-status, .device-errors, .device-temp {
+    display: none;
+  }
+
+}
+

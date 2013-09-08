@@ -1,0 +1,9 @@
+node_modules/
+.idea/
+config/
+public/.sass-cache
+server/pools/private*
+ssl-ca.crt
+ssl-cert.crt
+ssl-key.pem
+
