@@ -14,7 +14,7 @@ exports.initialize = (callback) ->
         exports.addresses = db.collection('addresses')
 
         exports.shares.ensureIndex {timestamp: 1}
-        exports.shares.ensureIndex {pool: 1, timestamp: 1}
+        exports.shares.ensureIndex {pool: 1}
 
         callback()
 

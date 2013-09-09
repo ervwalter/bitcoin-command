@@ -6,4 +6,5 @@ server/pools/private*
 ssl-ca.crt
 ssl-cert.crt
 ssl-key.pem
+deploy.sh
 
