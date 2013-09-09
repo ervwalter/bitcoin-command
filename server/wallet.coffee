@@ -53,7 +53,7 @@ exports.summary = (req, res) ->
         data = {}
         result.transactions.reverse()
         data.balance = result.balance
-        data.savings = result.savings[0].total
+        data.savings = result.savings?[0]?.total
 
         poolAccounts = _.reduce result.pools, (dict, pool) ->
             dict[pool.name] = true
