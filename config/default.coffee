@@ -12,6 +12,3 @@ module.exports =
         pass: 'password'
         ssl: true
         sslStrict: true
-    sell:
-        enabled: true
-        address: 'your exchange bitcoin address here'
