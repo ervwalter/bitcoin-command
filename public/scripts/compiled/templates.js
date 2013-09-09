@@ -37,7 +37,7 @@ angular.module("bitcoinApp").run(["$templateCache", function($templateCache) {
   );
 
   $templateCache.put("/templates/login.html",
-    "<h1>Please log in:</h1><form class=\"form\" ng-submit=\"login()\"><input type=\"hidden\" name=\"ReturnUrl\" value=\"@ViewBag.ReturnUrl\"><p class=\"text-error\">{{ error }}</p><input type=\"text\" ng-model=\"username\" class=\"input\" placeholder=\"Username\" autofocus=\"\" required=\"\"><input type=\"password\" ng-model=\"password\" class=\"input\" placeholder=\"Password\" required=\"\"><label class=\"checkbox\"><input type=\"checkbox\" ng-model=\"rememberMe\">Remember me</label><button type=\"submit\" class=\"btn\">Log in</button></form>"
+    "<h1>Please log in:</h1><form class=\"form\" ng-submit=\"login()\"><input type=\"hidden\" name=\"ReturnUrl\" value=\"@ViewBag.ReturnUrl\"><p class=\"text-error\">{{ error }}</p><input type=\"text\" ng-model=\"username\" class=\"input\" placeholder=\"Username\" autofocus=\"\" required=\"\">&nbsp;<input type=\"password\" ng-model=\"password\" class=\"input\" placeholder=\"Password\" required=\"\"><label class=\"checkbox\"><input type=\"checkbox\" ng-model=\"rememberMe\">Remember me</label><button type=\"submit\" class=\"btn\">Log in</button></form>"
   );
 
   $templateCache.put("/templates/messageBox.html",

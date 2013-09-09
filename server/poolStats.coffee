@@ -18,6 +18,7 @@ updatePools = ->
                 do (pool) ->
                     poolClients[pool.apiType]?(pool, (updates) ->
                         if updates
+                            console.log "updated pool stats for #{pool.name}"
                             db.pools.update {url: pool.url}, {$set: updates}
                     )
         return
