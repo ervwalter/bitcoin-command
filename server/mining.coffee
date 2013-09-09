@@ -18,6 +18,8 @@ exports.submitshare = (req, res) ->
     unless req.query.key is config.submitShareKey
         res.statusCode = 401
         res.send('Unauthorized')
+        return
+
     share = req.body
     unless share.hasOwnProperty('hostname') and share.hasOwnProperty('device') and share.hasOwnProperty('pool') and share.hasOwnProperty('result') and share.hasOwnProperty('shareHash') and share.hasOwnProperty('timestamp') and share.hasOwnProperty('targetDifficulty')
         res.statusCode = 400
