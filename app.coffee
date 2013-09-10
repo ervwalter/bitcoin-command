@@ -5,6 +5,7 @@ fs = require('fs')
 path = require('path')
 step = require('step')
 async = require('async')
+config = require('config')
 
 db = require('./server/db')
 security = require('./server/security')
