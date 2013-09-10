@@ -23,7 +23,7 @@ noCache = (req, res, next) ->
 app = express()
 
 # all environments
-app.set "port", Number(process.env.PORT or 3000)
+app.set "port", Number(config.port or 3000)
 app.set('views', __dirname + '/public');
 app.set('view engine', 'ejs');
 app.use express.favicon('public/favicon.ico')

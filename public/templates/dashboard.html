@@ -83,7 +83,7 @@
             </thead>
             <tbody>
 
-            <tr ng-repeat="pool in mining.pools">
+            <tr ng-repeat="pool in mining.pools | orderBy:'name'">
                 <td class="pool-activity">
                     <div id="pool-{{ pool.name | safeId }}" class="pulse pulse-pool"></div>
                 </td>
