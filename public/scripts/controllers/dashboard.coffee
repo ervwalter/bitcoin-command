@@ -67,7 +67,7 @@ bitcoinApp.controller 'DashboardCtrl', ($scope, $timeout, miningStats, walletInf
         if $scope.mining.devices?
             poolId = "#pool-#{safeIdFilter(data.pool)}"
             deviceId = "#device-#{safeIdFilter(data.hostname + ':' + data.device)}"
-            $(id).stop().clearQueue().fadeTo(0, 1).fadeTo(400,0) for id in [poolId, deviceId]
+            $(id).stop().clearQueue().fadeTo(0, 1).fadeTo(700,0) for id in [poolId, deviceId]
             device = _.find($scope.mining.devices[data.hostname], (d) -> d.device is data.device)
             pool = _.find($scope.mining.pools, (p) -> p.name is data.pool)
             if device? and pool?

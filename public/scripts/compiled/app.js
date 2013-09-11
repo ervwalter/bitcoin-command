@@ -255,7 +255,7 @@
         _ref = [poolId, deviceId];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           id = _ref[_i];
-          $(id).stop().clearQueue().fadeTo(0, 1).fadeTo(400, 0);
+          $(id).stop().clearQueue().fadeTo(0, 1).fadeTo(700, 0);
         }
         device = _.find($scope.mining.devices[data.hostname], function(d) {
           return d.device === data.device;

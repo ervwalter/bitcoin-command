@@ -20,17 +20,24 @@ exports.submitshare = (req, res) ->
         res.send('Unauthorized')
         return
 
-    share = req.body
-    unless share.hasOwnProperty('hostname') and share.hasOwnProperty('device') and share.hasOwnProperty('pool') and share.hasOwnProperty('result') and share.hasOwnProperty('shareHash') and share.hasOwnProperty('timestamp') and share.hasOwnProperty('targetDifficulty')
+    body = req.body
+    unless body.hasOwnProperty('hostname') and body.hasOwnProperty('device') and body.hasOwnProperty('pool') and body.hasOwnProperty('result') and body.hasOwnProperty('shareHash') and body.hasOwnProperty('timestamp') and body.hasOwnProperty('targetDifficulty')
         res.statusCode = 400
         console.log "Invalid Share."
         return res.send('Invalid share object')
 
     # save the share
-    share.pool = share.pool.toLowerCase()
-    share.device = share.device.toLowerCase()
-    share.hostname = share.hostname.toLowerCase()
-    share.accepted = share.result is 'accept'
+    share = {
+        timestamp: body.timestamp
+        shareHash: body.shareHash
+        hostname: body.hostname.toLowerCase()
+        device: body.device.toLowerCase()
+        pool: body.pool.toLowerCase()
+        accepted: body.result is 'accept'
+        targetDifficulty: body.targetDifficulty
+        shareDifficulty: body.shareDifficulty
+    }
+
     db.shares.update { shareHash: share.shareHash }, share, { upsert: true }
 
     # create the worker if it doesn't exist
