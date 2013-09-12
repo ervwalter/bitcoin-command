@@ -93,9 +93,10 @@ exports.price = (req, res) ->
     client = request.newClient 'https://coinbase.com/'
     client.get '/api/v1/prices/sell', (err, r, body) ->
         unless err
-            lastPrice = Number(body.amount)
+            lastPrice = Number(body.subtotal.amount)
             lastPriceExpiration = moment().add('seconds', 60).unix()
         res.json usd: lastPrice
+
 
 exports.recentRecipients = (req, res) ->
     client = new BitcoinClient config.bitcoin
