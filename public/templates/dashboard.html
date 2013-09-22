@@ -5,7 +5,7 @@
     </div>
     <div class="span5">
         <div class="infobox-container">
-            <div class="infobox infobox-btc" ng-show="authenticated">
+            <div class="infobox infobox-btc">
                 <div class="infobox-icon"><i class="icon-bitcoin"></i></div>
                 <div class="infobox-data">
                     <div class="infobox-value">{{ wallet.balance | number:4 }}</div>
@@ -16,7 +16,7 @@
                     <div class="infobox-caption">Total Bitcoins</div>
                 </div>
             </div>
-            <div class="infobox infobox-usd" ng-show="authenticated">
+            <div class="infobox infobox-usd">
                 <div class="infobox-icon"><i class="icon-dollar"></i></div>
                 <div class="infobox-data">
                     <div class="infobox-value">{{ price.usd | currency:"$" }}</div>
@@ -33,21 +33,16 @@
                     <div class="infobox-value">{{ mining.totalHashrate | hashrate }}</div>
                     <div class="infobox-caption">Hashrate</div>
                 </div>
-                <div class="infobox-data" ng-show="authenticated">
+                <div class="infobox-data">
                     <div class="infobox-value">{{ wallet.earnRate | number:2 }}</div>
                     <div class="infobox-caption">Actual BTC/day</div>
-                </div>
-            </div>
-            <div class="infobox" ng-hide="authenticated">
-                <div class="infobox-message">
-                    <a href="#/login">Login</a> to see additional details.
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row" ng-show="authenticated">
+<div class="row">
     <div class="span12">
         <h1><i class="icon-bitcoin orange"></i>&nbsp;Recent Transactions
             <div class="summary">
@@ -64,8 +59,8 @@
 <div class="row">
     <div class="span12">
         <h1><i class="icon-cloud orange"></i>&nbsp;Pools
-            <div class="summary">Expected BTC/day (w/ 3% fee): <b>{{ mining.expectedRate | number:2 }}</b><span ng-show="authenticated">, Actual
-                BTC/day: <b>{{ wallet.earnRate | number:2 }}</b></span></div>
+            <div class="summary">Expected BTC/day (w/ 3% fee): <b>{{ mining.expectedRate | number:2 }}</b>, Actual
+                BTC/day: <b>{{ wallet.earnRate | number:2 }}</b>, Actual USD/day: <b>{{ wallet.earnRate * price.usd | number:0 | prefix:'$' }}</b></div>
         </h1>
         <table class="table table-condensed table-hover">
             <thead>

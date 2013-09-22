@@ -36,5 +36,19 @@ bitcoinApp.factory 'popups', ($dialog) ->
                 templateUrl: '/templates/newAddress.html'
                 controller: 'NewAddressCtrl'
             }
+
+        showAddress: (address, label) ->
+            $dialog.dialog {
+                templateUrl: '/templates/newAddress.html'
+                controller: 'ShowAddressCtrl'
+                resolve: {
+                    model: ->
+                        {
+                            address: address
+                            label: label
+                        }
+                }
+            }
+
     }
 

@@ -3,6 +3,7 @@
 ###
 bitcoinApp.controller 'NewAddressCtrl', ($scope, $timeout, dialog, walletInfo) ->
 
+    $scope.title = "New Address"
     $scope.state = 'prompt'
 
     $scope.create = ->

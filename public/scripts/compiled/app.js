@@ -134,6 +134,9 @@
         }
       });
     };
+    $scope.qr = function(item) {
+      popups.showAddress(item.address, item.label).open();
+    };
   });
 
   /*
@@ -363,6 +366,7 @@
 
 
   bitcoinApp.controller('NewAddressCtrl', function($scope, $timeout, dialog, walletInfo) {
+    $scope.title = "New Address";
     $scope.state = 'prompt';
     $scope.create = function() {
       $scope.state = 'creating';
@@ -504,6 +508,21 @@
       }
   */
 
+
+  /*
+    QR Code Controller
+  */
+
+
+  bitcoinApp.controller('ShowAddressCtrl', function($scope, dialog, model) {
+    $scope.title = "Bitcoin Address";
+    $scope.state = 'created';
+    $scope.address = model.address;
+    $scope.label = model.label;
+    return $scope.close = function() {
+      return dialog.close();
+    };
+  });
 
   /*
     Wallet Controller
@@ -1038,6 +1057,20 @@
         return $dialog.dialog({
           templateUrl: '/templates/newAddress.html',
           controller: 'NewAddressCtrl'
+        });
+      },
+      showAddress: function(address, label) {
+        return $dialog.dialog({
+          templateUrl: '/templates/newAddress.html',
+          controller: 'ShowAddressCtrl',
+          resolve: {
+            model: function() {
+              return {
+                address: address,
+                label: label
+              };
+            }
+          }
         });
       }
     };

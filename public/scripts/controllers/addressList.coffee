@@ -21,4 +21,8 @@ bitcoinApp.controller 'AddressListCtrl', ($scope, walletInfo, popups) ->
         )
         return
 
+    $scope.qr = (item) ->
+        popups.showAddress(item.address, item.label).open()
+        return
+
     return
