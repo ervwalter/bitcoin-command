@@ -93,14 +93,14 @@ exports.summarydata = (req, res) ->
                         pool: 1
                         targetDifficulty: 1
                         acceptedDifficulty: { $cond: [
-                            $eq: ['$result', 'accept']
+                            '$accepted'
                             '$targetDifficulty'
                             0
                         ]}
                         rejectedDifficulty: { $cond: [
-                            $ne: ['$result', 'accept']
-                            '$targetDifficulty'
+                            '$accepted'
                             0
+                            '$targetDifficulty'
                         ]}
                 }
                 {
@@ -143,14 +143,14 @@ exports.summarydata = (req, res) ->
                         pool: 1
                         targetDifficulty: 1
                         acceptedDifficulty: { $cond: [
-                            $eq: ['$result', 'accept']
+                            '$accepted'
                             '$targetDifficulty'
                             0
                         ]}
                         rejectedDifficulty: { $cond: [
-                            $ne: ['$result', 'accept']
-                            '$targetDifficulty'
+                            '$accepted'
                             0
+                            '$targetDifficulty'
                         ]}
                 }
                 {
