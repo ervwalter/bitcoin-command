@@ -5,6 +5,8 @@ Bitcoin Command Center is a web-based application that has two main functions:
 * A web based frontend to bitcoin-qt/bitcoind (view transactions, send coins, manage addresses, etc)
 * A monitoring dashboard for a Bitcoin mining operation.
 
+For more information, [go here](http://www.ewal.net/2013/09/24/bitcoin-command-a-mining-slash-wallet-management-web-app/).
+
 Bitcoin Command Center is not a turnkey application intended for end users.  If you would like to use it, you will almost certainly need to have an understanding of the technologies involved and you'll need to be comfortable reading and editing the source code to make things work for your specific setup.
 
 The major technologies involved are:
@@ -28,3 +30,4 @@ At a high level, getting this running requires the following steps:
 7. Point your web browser at the server you just started.
 
 Now, to be truely useful, you'll also need to configure your bitcoin miners to submit data to the web application ever time they find a share.  If you are using *cgminer*, you can look at my [share monitor](https://github.com/ervwalter/share-monitor/) node.js script as an example of how to do this.
+
