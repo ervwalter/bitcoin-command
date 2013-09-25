@@ -45,7 +45,7 @@ exports.requireAuthentication = (req, res, next) ->
     return
 
 exports.login = (req, res) ->
-    if req.body.username is config.authentication.username and req.body.password is config.authentication.password
+    if req.body.username.toLowerCase() is config.authentication.username.toLowerCase() and req.body.password is config.authentication.password
         req.authenticated = true
         res.cookie statusCookieName, JSON.stringify(req.authenticated), { path: '/' }
         if req.body.rememberMe

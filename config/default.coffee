@@ -1,5 +1,6 @@
 module.exports =
     port: 3000
+    debug: false
     mongoDbConnectionString: 'mongodb://localhost/bitcoin'
     submitShareKey: 'secret'
     cookieSecretKey: 'password'

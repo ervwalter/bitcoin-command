@@ -61,6 +61,12 @@ app.get '/pools/:poolId', noCache, security.requireAuthentication, pools.getPool
 app.post '/login', noCache, security.login
 app.post '/logout', noCache, security.logout
 
+debug = config.debug or false
+
+app.locals.scriptPath = (path) ->
+    return path.replace /.js$/, '.min.js' unless debug
+    return path
+
 app.get '/', (req, res) ->
     res.render "index"
 
