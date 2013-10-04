@@ -37,9 +37,7 @@ app.use security.authParser()
 app.use express.compress()
 app.use express['static'](path.join(__dirname, "public"))
 app.use app.router
-
-# development only
-app.use express.errorHandler()  #if "development" is app.get("env")
+app.use express.errorHandler()
 
 app.post '/submitshare', noCache, mining.submitshare
 app.get '/mining/summary', noCache, security.requireAuthentication, mining.summarydata
