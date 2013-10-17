@@ -47,6 +47,7 @@ app.get '/wallet/summary', noCache, security.requireAuthentication, wallet.summa
 app.get '/wallet/price', noCache, security.requireAuthentication, wallet.price
 app.get '/wallet/recentRecipients', noCache, security.requireAuthentication, wallet.recentRecipients
 app.post '/wallet/send', noCache, security.requireAuthentication, wallet.sendTx
+app.post '/wallet/sign', noCache, security.requireAuthentication, wallet.signMsg
 app.get '/wallet/addresses', noCache, security.requireAuthentication, wallet.listAddresses
 app.post '/wallet/addresses', noCache, security.requireAuthentication, wallet.updateAddress
 app.post '/wallet/newaddress', noCache, security.requireAuthentication, wallet.newAddress

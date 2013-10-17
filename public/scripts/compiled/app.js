@@ -1,5 +1,5 @@
 /*
-    Main Module
+	Main Module
 */
 
 
@@ -81,6 +81,12 @@
       templateUrl: '/templates/send.html',
       controller: 'SendCtrl',
       title: 'Send Bitcoins',
+      resolve: requireAuthentication()
+    });
+    $routeProvider.when('/wallet/sign', {
+      templateUrl: '/templates/sign.html',
+      controller: 'SignCtrl',
+      title: 'Sign Message',
       resolve: requireAuthentication()
     });
     $routeProvider.when('/wallet/addresses', {
@@ -521,6 +527,38 @@
     $scope.label = model.label;
     return $scope.close = function() {
       return dialog.close();
+    };
+  });
+
+  /*
+    Sign Controller
+  */
+
+
+  bitcoinApp.controller('SignCtrl', function($scope, popups, $location, $timeout, walletInfo) {
+    $scope.msg = {};
+    $scope.status = {};
+    $scope.addresses = walletInfo.getAddresses();
+    $scope.signing = false;
+    $scope.signed = false;
+    $scope.selectedAddress = function(item) {
+      return $timeout(function() {
+        return $('textarea[name=message]').focus();
+      });
+    };
+    return $scope.sign = function(msg) {
+      $scope.signed = false;
+      $scope.sending = true;
+      $scope.error = '';
+      console.log(msg);
+      return walletInfo.signMsg(msg).then(function(signature) {
+        $scope.signature = signature;
+        $scope.signed = true;
+        return $scope.sending = false;
+      }, function(error) {
+        $scope.sending = false;
+        return $scope.error = error;
+      });
     };
   });
 
@@ -1112,7 +1150,7 @@
   });
 
   /*
-      Wallet Service
+  	Wallet Service
   */
 
 
@@ -1163,6 +1201,20 @@
           data: tx
         }).success(function() {
           return deferred.resolve();
+        }).error(function(data, status) {
+          return deferred.reject(data.error);
+        });
+        return deferred.promise;
+      },
+      signMsg: function(msg) {
+        var deferred;
+        deferred = $q.defer();
+        $http({
+          method: 'POST',
+          url: '/wallet/sign',
+          data: msg
+        }).success(function(data) {
+          return deferred.resolve(data.signature);
         }).error(function(data, status) {
           return deferred.reject(data.error);
         });

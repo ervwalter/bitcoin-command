@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="span12">
+        <form name="form" valid-submit="sign(msg)" autocomplete="off">
+            <fieldset>
+                <legend>Sign Message</legend>
+                <control-group for="address">
+                    <div class="controls" id="addressFields">
+                        <input type="text" name="address" class="span4" ng-model="msg.address"
+                               placeholder="Address" ng-required="true"
+                               typeahead="item.address as item.label + ' - ' + item.address for item in addresses | filter:{$:$viewValue, archived:false} | limitTo:8"
+                               typeahead-on-select="selectedAddress($item)"
+                               autofocus="true" ng-disabled="signing" />
+                        <validation-message for="address" required="Address is required."
+                                pattern="Enter a valid bitcoin address"/>
+                    </div>
+                </control-group>
+                <control-group for="message">
+                    <div class="controls">
+                        <textarea rows="5" name="message" class="span8" ng-model="msg.message" placeholder="Message Text" ng-required="true" ng-disabled="signing"></textarea>
+                        <validation-message for="message" required="Message is required."
+                                            pattern="Enter a message to sign"/>
+                    </div>
+                </control-group>
+                <control-group for="passphrase">
+                    <div class="controls">
+                        <input type="password" name="passphrase" class="span4" ng-model="msg.passphrase"
+                               placeholder="Passphrase" ng-required="true"  ng-disabled="signing" />
+                        <validation-message for="passphrase" required="Enter your wallet passphrase." />
+                    </div>
+                </control-group>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-success" ng-disabled="signing">Sign Message</button>
+                        <button onclick="history.back();return false;" class="btn" ng-disabled="signing">Cancel</button>
+                    </div>
+                </div>
+                <div ng-show="signing || error || signed" class="status-messages">
+                    <div ng-show="signing"><img src="/images/spinner.gif" class="spinner"/>&nbsp;&nbsp;Signing Message...</div>
+                    <div ng-show="error" class="text-error">{{ error }}</div>
+                    <div ng-show="signed" class="control-group">
+                        <div class="controls">
+                            <label>Message Signature:</label>
+                            <input type="text" class="span11"  ng-model="signature" ng-readonly="true" />
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+
