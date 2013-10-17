@@ -7490,6 +7490,13 @@ textarea[readonly] {
   cursor: inherit;
 }
 
+/* line 211, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_core.scss */
+.message-signature {
+  white-space: pre;
+  word-break: inherit;
+  word-wrap: inherit;
+}
+
 /* line 3, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 [class*="span"] {
   padding-bottom: 10px;

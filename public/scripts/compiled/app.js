@@ -546,17 +546,19 @@
         return $('textarea[name=message]').focus();
       });
     };
+    $scope.$watchCollection('[msg.address, msg.message, msg.passphrase]', function() {
+      return $scope.signed = false;
+    });
     return $scope.sign = function(msg) {
       $scope.signed = false;
-      $scope.sending = true;
+      $scope.signing = true;
       $scope.error = '';
-      console.log(msg);
       return walletInfo.signMsg(msg).then(function(signature) {
         $scope.signature = signature;
         $scope.signed = true;
-        return $scope.sending = false;
+        return $scope.signing = false;
       }, function(error) {
-        $scope.sending = false;
+        $scope.signing = false;
         return $scope.error = error;
       });
     };

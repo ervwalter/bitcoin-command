@@ -14,17 +14,19 @@ bitcoinApp.controller 'SignCtrl', ($scope, popups, $location, $timeout, walletIn
 		# is too messy, IMHO.  So I'm going to break the rule...
 		$timeout -> $('textarea[name=message]').focus()
 
+	$scope.$watchCollection '[msg.address, msg.message, msg.passphrase]', ->
+		$scope.signed = false
+
 	$scope.sign = (msg) ->
 		$scope.signed = false
-		$scope.sending = true
+		$scope.signing = true
 		$scope.error = ''
-		console.log msg
 		walletInfo.signMsg(msg).then((signature) ->
 			$scope.signature = signature
 			$scope.signed = true
-			$scope.sending = false
+			$scope.signing = false
 		, (error) ->
-			$scope.sending = false
+			$scope.signing = false
 			$scope.error = error
 		)
 

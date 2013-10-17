@@ -37,11 +37,13 @@
                 <div ng-show="signing || error || signed" class="status-messages">
                     <div ng-show="signing"><img src="/images/spinner.gif" class="spinner"/>&nbsp;&nbsp;Signing Message...</div>
                     <div ng-show="error" class="text-error">{{ error }}</div>
-                    <div ng-show="signed" class="control-group">
-                        <div class="controls">
-                            <label>Message Signature:</label>
-                            <input type="text" class="span11"  ng-model="signature" ng-readonly="true" />
-                        </div>
+                    <div ng-show="signed">
+                            <pre class="message-signature">-----BEGIN BITCOIN SIGNED MESSAGE-----
+{{ msg.message }}
+-----BEGIN BITCOIN SIGNATURE-----
+Address: {{ msg.address }}
+Signature: {{ signature }}
+-----END BITCOIN SIGNATURE-----</pre>
                     </div>
                 </div>
 

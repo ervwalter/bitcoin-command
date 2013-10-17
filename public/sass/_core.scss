@@ -207,3 +207,9 @@ select[readonly],
 textarea[readonly] {
   cursor: inherit;
 }
+
+.message-signature {
+  white-space: pre;
+  word-break: inherit;
+  word-wrap: inherit;
+}
