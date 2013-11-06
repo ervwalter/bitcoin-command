@@ -41,9 +41,20 @@ exports.submitshare = (req, res) ->
     db.shares.update { shareHash: share.shareHash }, share, { upsert: true }
 
     # create the worker if it doesn't exist
+
+    prefix = share.device.match(/^\D+/)
+    prefix = prefix[0] if prefix?
+    prefix = prefix or ''
+    type = switch prefix
+        when 'amu' then 'ASICMiner USB'
+        when 'bas' then 'BFL Single SC'
+        when 'baj' then 'BFL Jalapeno'
+        when 'bitfury' then 'BitFury'
+        else 'Unknown'
     device = {
         hostname: share.hostname
         device: share.device
+        type: type
     }
     db.devices.update { hostname: device.hostname, device: device.device}, {$setOnInsert: device}, { upsert: true }
 

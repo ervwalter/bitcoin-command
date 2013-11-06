@@ -7624,12 +7624,17 @@ textarea[readonly] {
 }
 
 /* line 114, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
-.device-host {
+.device-hostname {
   font-weight: bold;
   padding: 0 0 8px 12px;
 }
 
 /* line 119, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+.device-host + .device-host {
+  margin-top: 20px;
+}
+
+/* line 123, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -7639,60 +7644,60 @@ textarea[readonly] {
   background-color: #f0f0f0;
   margin-bottom: 0;
 }
-/* line 124, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 128, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table td {
   white-space: nowrap;
 }
-/* line 128, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 132, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .tx-confirmed {
   text-align: center;
 }
-/* line 132, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 136, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .tx-description {
   min-width: 300px;
 }
-/* line 136, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 140, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table a, .table a:active, .table a:visited {
   color: #333333;
 }
-/* line 140, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 144, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table a:hover {
   color: #eb611f;
 }
-/* line 145, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 149, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table a {
   text-decoration: none;
 }
-/* line 148, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 152, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table a:hover {
   text-decoration: underline;
 }
-/* line 153, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 157, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .green {
   color: #1c9b47;
 }
-/* line 157, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 161, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .red {
   color: #cf0001;
 }
-/* line 161, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 165, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .unconfirmed, .table .unconfirmed a, .table .unconfirmed .red, .table .unconfirmed .green {
   font-style: italic;
   color: #999999;
 }
-/* line 166, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 170, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .pool-hashrate, .table .pool-shares, .table .pool-reject, .table .pool-pending, .table .pool-payouts, .table .pool-size {
   text-align: right;
 }
-/* line 170, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 174, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .device-rate, .table .device-shares, .table .device-reject, .table .device-temp {
   text-align: right;
 }
-/* line 174, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 178, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .device-activity, .table .pool-activity {
   padding: 10px 0 0 5px;
 }
-/* line 176, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 180, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .device-activity div, .table .pool-activity div {
   width: 10px;
   height: 10px;
@@ -7702,27 +7707,27 @@ textarea[readonly] {
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 184, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+/* line 188, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
 .table .device-id, .table .pool-name {
   padding-left: 5px;
 }
 
 @media (max-width: 979px) {
-  /* line 191, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 195, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   #chart {
     height: 225px;
   }
-  /* line 194, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 198, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   #chart .loading {
     line-height: 225px;
   }
 
-  /* line 199, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 203, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .infobox-container {
     text-align: center;
   }
 
-  /* line 203, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 207, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .infobox {
     width: 260px;
     height: 40px;
@@ -7730,19 +7735,19 @@ textarea[readonly] {
     font-size: 80%;
   }
 
-  /* line 210, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 214, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .infobox-icon {
     width: 36px;
     height: 36px;
     margin-right: 10px;
   }
-  /* line 215, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 219, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .infobox-icon i {
     padding: 5px 0;
     font-size: 1.8em;
   }
 
-  /* line 221, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 225, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .infobox-data {
     width: 80px;
     line-height: 16px;
@@ -7750,33 +7755,33 @@ textarea[readonly] {
     padding: 0 5px;
   }
 
-  /* line 228, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 232, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .infobox-btc .infobox-icon i {
     padding: 5px 0;
   }
 
-  /* line 233, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 237, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .infobox-speed .infobox-icon img {
     width: 24px;
     margin: 7px 6px;
   }
 
-  /* line 239, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 243, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .infobox-message {
     padding-top: 7px;
   }
 
-  /* line 244, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 248, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .tx-date, .tx-time, .tx-confirmsed {
     display: none;
   }
 
-  /* line 248, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 252, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .tx-confirmed {
     width: 15%;
   }
 
-  /* line 252, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 256, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .tx-description {
     min-width: auto;
     width: 60%;
@@ -7785,7 +7790,7 @@ textarea[readonly] {
     text-overflow: ellipsis;
   }
 
-  /* line 260, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 264, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .tx-amount {
     width: 25%;
     white-space: nowrap;
@@ -7793,27 +7798,27 @@ textarea[readonly] {
     text-overflow: ellipsis;
   }
 
-  /* line 267, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 271, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   #transactions {
     table-layout: fixed;
   }
 
-  /* line 271, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 275, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .table-condensed {
     font-size: 11.9px;
     width: 100%;
   }
-  /* line 275, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 279, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .table-condensed td, .table-condensed th {
     padding: 3px 8px;
   }
 
-  /* line 281, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 285, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .pool-shares, .pool-reject, .pool-payouts, .pool-size {
     display: none;
   }
 
-  /* line 285, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
+  /* line 289, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */
   .device-type, .device-shares, .device-reject, .device-status, .device-errors, .device-temp {
     display: none;
   }

@@ -111,9 +111,13 @@
   color: $orange;
 }
 
-.device-host {
+.device-hostname {
   font-weight: bold;
   padding: 0 0 8px 12px;
+}
+
+.device-host + .device-host {
+  margin-top: 20px;
 }
 
 .table {

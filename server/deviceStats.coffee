@@ -45,13 +45,8 @@ updateDevices = ->
                             if hw and accepted? and rejected?
                                 total = hw + accepted + rejected
                                 errors = Number((100 * hw / total).toFixed(2)) if total > 0
-                            type = switch key.substr(0, 3)
-                                when 'amu' then 'ASICMiner USB'
-                                when 'bas' then 'BFL Single SC'
-                                when 'baj' then 'BFL Jalapeno'
-                                else 'Unknown'
                             status = devs[key]['Status']
                             temp = devs[key]['Temperature']
-                            db.devices.update( {hostname: hostname, device: key}, {$set: {type: type, status: status, temp: temp, errors: errors}} )
+                            db.devices.update( {hostname: hostname, device: key}, {$set: {status: status, temp: temp, errors: errors}} )
                         console.log "updated cgminer stats for #{hostname}:#{port}"
                     )

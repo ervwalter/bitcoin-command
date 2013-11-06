@@ -101,8 +101,8 @@
     <div class="span12">
         <h1><i class="icon-cogs orange"></i>&nbsp;Devices
         </h1>
-        <div ng-repeat="(host, devices) in mining.devices">
-            <div class="device-host" id="host-{{ host | safeId }}">{{ host }}</div>
+        <div ng-repeat="(host, devices) in mining.devices" class="device-host">
+            <div class="device-hostname" id="host-{{ host | safeId }}">{{ host }}</div>
             <table class="table table-condensed table-hover">
                 <thead>
                 <tr>
