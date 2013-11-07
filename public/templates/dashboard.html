@@ -114,9 +114,9 @@
                     <th class="device-reject">% Rej</th>
                     <th class="device-pool">Last Pool</th>
                     <th class="device-lastshare">Last Share</th>
-                    <th class="device-status">Status</th>
-                    <th class="device-errors">HW</th>
-                    <th class="device-temp">Temp</th>
+                    <th class="device-status" ng-if="host != 'stratum-proxy'">Status</th>
+                    <th class="device-errors" ng-if="host != 'stratum-proxy'">HW</th>
+                    <th class="device-temp" ng-if="host != 'stratum-proxy'">Temp</th>
                     <th class="device-warning"></th>
                 </tr>
                 </thead>
@@ -132,9 +132,9 @@
                     <td class="device-reject">{{ device | rejectPercent }}</td>
                     <td class="device-pool">{{ device.lastPool }}</td>
                     <td class="device-lastshare">{{ device.lastShare | timeSince }}</td>
-                    <td class="device-status">{{ device.status }}</td>
-                    <td class="device-errors">{{ device.errors | suffix:'%' }}</td>
-                    <td class="device-temp">{{ device.temp | suffix:'°C':false }} </td>
+                    <td class="device-status" ng-if="host != 'stratum-proxy'">{{ device.status }}</td>
+                    <td class="device-errors" ng-if="host != 'stratum-proxy'">{{ device.errors | suffix:'%' }}</td>
+                    <td class="device-temp" ng-if="host != 'stratum-proxy'">{{ device.temp | suffix:'°C':false }} </td>
                     <td class="device-warning"></td>
                 </tr>
                 </tbody>
