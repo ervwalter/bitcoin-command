@@ -869,6 +869,7 @@
           }
           break;
         case 'generate':
+        case 'immature':
           if (tx.account != null) {
             msg += "" + tx.account + ", ";
           }

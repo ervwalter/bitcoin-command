@@ -44,7 +44,7 @@ bitcoinApp.filter 'transactionDescription', ->
                 if tx.to? then msg += tx.to else msg += tx.address
                 msg += " (#{tx.comment})" if tx.comment?
                 msg += ", fee: #{tx.fee * -1}" if tx.fee < 0
-            when 'generate'
+            when 'generate', 'immature'
                 msg += "#{tx.account}, " if tx.account?
                 msg += "generated #{tx.amount}"
             else
