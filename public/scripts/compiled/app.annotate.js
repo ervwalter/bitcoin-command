@@ -827,7 +827,7 @@
         if (tx.account != null) {
           msg += '' + tx.account + ', ';
         }
-        msg += 'generated ' + tx.amount;
+        msg += 'generated';
         break;
       default:
         msg = 'unknown';

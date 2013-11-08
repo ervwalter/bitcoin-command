@@ -59,8 +59,10 @@
 <div class="row">
     <div class="span12">
         <h1><i class="icon-cloud orange"></i>&nbsp;Pools
-            <div class="summary">Expected BTC/day (w/ 3% fee): <b>{{ mining.expectedRate | number:2 }}</b>, Actual
-                BTC/day: <b>{{ wallet.earnRate | number:2 }}</b>, Actual USD/day: <b>{{ wallet.earnRate * price.usd | number:0 | prefix:'$' }}</b></div>
+            <div class="summary">Expected per day (w/ 3% fee): <b>{{ mining.expectedRate | number:2 }}</b> / <b>{{ mining.expectedRate * price.usd | number:0 | prefix:'$' }}</b>,
+                &nbsp;&nbsp;
+                Actual per day: <b>{{ wallet.earnRate | number:2 }}</b> / <b>{{ wallet.earnRate * price.usd | number:0 | prefix:'$' }}</b>
+            </div>
         </h1>
         <table class="table table-condensed table-hover">
             <thead>
