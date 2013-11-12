@@ -9,7 +9,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="tx in transactions" ng-class="{ confirmed: tx.confirmed, unconfirmed: !tx.confirmed }">
+    <tr ng-repeat="tx in transactions | filter:filter" ng-class="{ confirmed: tx.confirmed, unconfirmed: !tx.confirmed }">
         <td class="tx-date">{{ tx.time * 1000 | date:'shortDate' }}</td>
         <td class="tx-time">{{ tx.time * 1000 | date:'shortTime' }}</td>
         <td class="tx-confirmed">{{ tx | confirmationCount }}</td>

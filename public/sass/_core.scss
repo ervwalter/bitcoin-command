@@ -211,8 +211,7 @@ textarea[readonly] {
 
 .message-signature {
   white-space: pre;
-  word-break: inherit;
-  word-wrap: inherit;
+  word-break: inherit;word-wrap: inherit;
 }
 
 #filter-term {
@@ -220,4 +219,17 @@ textarea[readonly] {
     margin-right: 10px;
     margin-bottom: 0;
   }
+}
+
+.relative
+{
+  position: relative;
+}
+
+.clear-search {
+  position: absolute;
+  right: 18px;
+  top: -4px;
+  cursor: pointer;
+  font-size: 18px;
 }

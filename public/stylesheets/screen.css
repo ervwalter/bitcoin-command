@@ -7499,11 +7499,25 @@ textarea[readonly] {
 }
 
 @media (min-width: 768px) {
-  /* line 218, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_core.scss */
+  /* line 217, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_core.scss */
   #filter-term {
     margin-right: 10px;
     margin-bottom: 0;
   }
+}
+
+/* line 225, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_core.scss */
+.relative {
+  position: relative;
+}
+
+/* line 229, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_core.scss */
+.clear-search {
+  position: absolute;
+  right: 18px;
+  top: -4px;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 /* line 3, /Volumes/Data/Dropbox/Projects/bitcoin-command/public/sass/_dashboard.scss */

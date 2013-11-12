@@ -9,6 +9,7 @@ bitcoinApp.directive 'transactionList', ->
         templateUrl: '/templates/directives/transactionList.html'
         scope: {
             transactions: '='
+            filter: '='
         }
     }
 
