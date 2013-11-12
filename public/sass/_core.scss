@@ -97,6 +97,7 @@ h1, legend {
 
 .table-footer {
   margin-top: 10px;
+  margin-bottom: 20px;
   font-size: $baseFontSize * 0.8;
 }
 
@@ -212,4 +213,11 @@ textarea[readonly] {
   white-space: pre;
   word-break: inherit;
   word-wrap: inherit;
+}
+
+#filter-term {
+  @media (min-width: 768px) {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
 }

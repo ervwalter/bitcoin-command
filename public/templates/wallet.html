@@ -15,13 +15,17 @@
             </div>
         </div>
 
+
         <p class="table-footer muted">
-            <span ng-show="wallet.more && count != 'all'">Last {{ count }} transactions shown.</span>
-            <span ng-hide="wallet.more && count != 'all'">All transactions shown.</span>
-            Show <a href="" ng-click="show(50)">50</a>, <a href="" ng-click="show(100)">100</a>, <a href="" ng-click="show(250)">250</a>, <a href="" ng-click="show(500)">500</a>, <a href="" ng-click="show(1000)">1000</a>, or <a href="" ng-click="show('all')">all</a> transactions.
+            <input type="text" id="filter-term" class="span3" ng-model="filterTerm" placeholder="filter transactions"/>
+            <span ng-show="wallet.more && count != 'all'">Last {{ count }} transactions loaded.</span>
+            <span ng-hide="wallet.more && count != 'all'">All transactions loaded.</span>
+            Load <a href="" ng-click="show(50)">50</a>, <a href="" ng-click="show(500)">500</a>, <a href=""
+                                                                                                    ng-click="show(1000)">1000</a>,
+            or <a href="" ng-click="show('all')">all</a>.
         </p>
 
-        <transaction-list transactions="wallet.transactions" />
+        <transaction-list transactions="wallet.transactions | filter:filterTerm"/>
 
         <div>odd</div>
 
