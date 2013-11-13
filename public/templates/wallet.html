@@ -23,9 +23,9 @@
             </span>
             <span ng-show="wallet.more && count != 'all'">Last {{ count }} transactions loaded.</span>
             <span ng-hide="wallet.more && count != 'all'">All transactions loaded.</span>
-            Load <a href="" ng-click="show(50)">50</a>, <a href="" ng-click="show(500)">500</a>, <a href=""
-                                                                                                    ng-click="show(1000)">1000</a>,
-            or <a href="" ng-click="show('all')">all</a>.
+            Load <a href="" ng-click="show(50)">50</a>, <a href="" ng-click="show(250)">250</a>,
+                <a href="" ng-click="show(1000)">1000</a>,
+                or <a href="" ng-click="show('all')">all</a>.
         </p>
 
         <transaction-list transactions="wallet.transactions" filter="filterTerm"/>
