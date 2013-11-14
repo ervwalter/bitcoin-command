@@ -10,11 +10,11 @@ bitcoinApp.controller 'PoolsCtrl', ($scope, $location, pools) ->
         pools.save(pool)
 
     $scope.deletePool = (pool) ->
-        pools.delete(pool._id)
+        pools.delete(pool.id)
         index = _.indexOf($scope.pools, pool)
         $scope.pools.splice(index, 1) if index >= 0
 
     $scope.editPool = (pool) ->
-        $location.path '/pools/' + pool._id
+        $location.path '/pools/' + pool.id
 
     return

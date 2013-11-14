@@ -53,7 +53,7 @@ angular.module("bitcoinApp").run(["$templateCache", function($templateCache) {
   );
 
   $templateCache.put("/templates/pools.html",
-    "<div class=\"row\"><div class=\"span12\"><h1>Pools</h1><table class=\"table table-condensed\"><thead><tr><th>Name</th><th>Url</th><th>Visible</th><th>&nbsp;</th></tr></thead><tbody><tr ng-repeat=\"pool in pools | orderBy:'name'\"><td>{{ pool.name }}</td><td>{{ pool.url }}</td><td class=\"center\"><a href=\"\" ng-click=\"toggleEnabled(pool)\"><i ng-class=\"{green: pool.enabled, 'icon-checkmark': pool.enabled, red: !pool.enabled, 'icon-close': !pool.enabled}\"></i></a></td><td><a href=\"\" ng-click=\"editPool(pool)\"><i class=\"icon-pencil\"></i></a> &nbsp; <a href=\"\" ng-click=\"deletePool(pool)\"><i class=\"icon-remove\"></i></a></td></tr></tbody></table></div></div>"
+    "<div class=\"row\"><div class=\"span12\"><h1>Pools</h1><table class=\"table table-condensed\"><thead><tr><th>Name</th><th>Url</th><th>Visible</th><th>&nbsp;</th></tr></thead><tbody><tr ng-repeat=\"pool in pools\"><td>{{ pool.name }}</td><td>{{ pool.url }}</td><td class=\"center\"><a href=\"\" ng-click=\"toggleEnabled(pool)\"><i ng-class=\"{green: pool.enabled, 'icon-checkmark': pool.enabled, red: !pool.enabled, 'icon-close': !pool.enabled}\"></i></a></td><td><a href=\"\" ng-click=\"editPool(pool)\"><i class=\"icon-pencil\"></i></a> &nbsp; <a href=\"\" ng-click=\"deletePool(pool)\"><i class=\"icon-remove\"></i></a></td></tr></tbody></table></div></div>"
   );
 
   $templateCache.put("/templates/send.html",

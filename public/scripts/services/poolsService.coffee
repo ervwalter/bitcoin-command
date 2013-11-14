@@ -3,10 +3,10 @@
 ###
 
 bitcoinApp.factory 'pools', ($resource) ->
-    resource = $resource('/pools/:id', {id:'@_id'}, {
+    resource = $resource('/pools/:id', {id:'@id'}, {
         delete: {
             method: 'DELETE'
-            params: {id: '@_id'}
+            params: {id: '@id'}
         }
     })
 

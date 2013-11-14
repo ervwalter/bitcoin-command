@@ -1,9 +1,13 @@
 db = require('./db')
 BSON = require('mongodb').BSONPure
+_ = require('./underscore-plus')
 
 exports.getAllPools = (req, res) ->
     db.pools.find().toArray (err, data) ->
         if err then throw err
+        _.each data, (pool) ->
+            pool.id = pool._id
+            delete pool._id
         res.json data
 
 exports.getPool = (req, res) ->
@@ -14,11 +18,14 @@ exports.getPool = (req, res) ->
             res.statusCode = 404
             res.json error: 'pool not found'
             return
+        pool.id = pool._id
+        delete pool._id
         res.json pool
 
 exports.savePool = (req, res) ->
     pool = req.body
     id = new BSON.ObjectID(req.params.poolId)
+    delete pool.id
     delete pool._id
     delete pool.poolSize
     delete pool.pending

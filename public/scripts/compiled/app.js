@@ -415,14 +415,14 @@
     };
     $scope.deletePool = function(pool) {
       var index;
-      pools["delete"](pool._id);
+      pools["delete"](pool.id);
       index = _.indexOf($scope.pools, pool);
       if (index >= 0) {
         return $scope.pools.splice(index, 1);
       }
     };
     $scope.editPool = function(pool) {
-      return $location.path('/pools/' + pool._id);
+      return $location.path('/pools/' + pool.id);
     };
   });
 
@@ -1039,12 +1039,12 @@
   bitcoinApp.factory('pools', function($resource) {
     var resource;
     resource = $resource('/pools/:id', {
-      id: '@_id'
+      id: '@id'
     }, {
       "delete": {
         method: 'DELETE',
         params: {
-          id: '@_id'
+          id: '@id'
         }
       }
     });

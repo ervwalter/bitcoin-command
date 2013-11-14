@@ -411,14 +411,14 @@
       };
       $scope.deletePool = function (pool) {
         var index;
-        pools['delete'](pool._id);
+        pools['delete'](pool.id);
         index = _.indexOf($scope.pools, pool);
         if (index >= 0) {
           return $scope.pools.splice(index, 1);
         }
       };
       $scope.editPool = function (pool) {
-        return $location.path('/pools/' + pool._id);
+        return $location.path('/pools/' + pool.id);
       };
     }
   ]);
@@ -985,10 +985,10 @@
     '$resource',
     function ($resource) {
       var resource;
-      resource = $resource('/pools/:id', { id: '@_id' }, {
+      resource = $resource('/pools/:id', { id: '@id' }, {
         'delete': {
           method: 'DELETE',
-          params: { id: '@_id' }
+          params: { id: '@id' }
         }
       });
       return {
