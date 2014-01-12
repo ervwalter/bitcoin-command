@@ -73,7 +73,7 @@ exports.submitshare = (req, res) ->
             pool: pool.name
         }
         io.http.sockets.emit('share', msg)
-        io.https.sockets.emit('share', msg)
+        io.https.sockets.emit('share', msg) if io.https?
     res.json result: true
 
 exports.summarydata = (req, res) ->
