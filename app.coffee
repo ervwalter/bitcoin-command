@@ -18,8 +18,8 @@ dbCleanup = require('./server/dbCleanup')
 io = require('./server/io')
 
 noCache = (req, res, next) ->
-    res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate');
-    next()
+	res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate');
+	next()
 
 app = express()
 
@@ -64,43 +64,44 @@ app.post '/logout', noCache, security.logout
 debug = config.debug or false
 
 app.locals.scriptPath = (path) ->
-    return path.replace /.js$/, '.min.js' unless debug
-    return path
+	return path.replace /.js$/, '.min.js' unless debug
+	return path
 
 app.get '/', (req, res) ->
-    res.render "index"
+	res.render "index"
 
 db.initialize ->
-    # initialize background tasks
-    poolStats.initialize()
-    deviceStats.initialize()
-    dbCleanup.initialize()
+	# initialize background tasks
+	poolStats.initialize()
+	deviceStats.initialize()
+	dbCleanup.initialize()
+	mining.initialize()
 
-    # setup web servers
-    port = app.get("port")
+	# setup web servers
+	port = app.get("port")
 
-    server = http.createServer(app)
-    io.http = require('socket.io').listen(server)
-    io.http.set('log level', 1)
-    io.http.set('authorization', security.socketAuthentication)
-    server.listen port, (err) ->
-        throw err if err
-        console.log "Express server listening on port #{port}"
+	server = http.createServer(app)
+	io.http = require('socket.io').listen(server)
+	io.http.set('log level', 1)
+	io.http.set('authorization', security.socketAuthentication)
+	server.listen port, (err) ->
+		throw err if err
+		console.log "Express server listening on port #{port}"
 
-    try
-        options = {
-            ca: fs.readFileSync('./ssl-ca.crt')
-            cert: fs.readFileSync('./ssl-cert.crt')
-            key: fs.readFileSync('./ssl-key.pem')
-        }
-        sslServer = https.createServer(options, app)
-        io.https = require('socket.io').listen(sslServer)
-        io.https.set('log level', 1)
-        io.https.set('authorization', security.socketAuthentication)
-        sslServer.listen port + 1, (err) ->
-            throw err if err
-            console.log "Express server listening with SSL on port #{port+1}"
-    catch e
+	try
+		options = {
+			ca: fs.readFileSync('./ssl-ca.crt')
+			cert: fs.readFileSync('./ssl-cert.crt')
+			key: fs.readFileSync('./ssl-key.pem')
+		}
+		sslServer = https.createServer(options, app)
+		io.https = require('socket.io').listen(sslServer)
+		io.https.set('log level', 1)
+		io.https.set('authorization', security.socketAuthentication)
+		sslServer.listen port + 1, (err) ->
+			throw err if err
+			console.log "Express server listening with SSL on port #{port+1}"
+	catch e
 
 
 
