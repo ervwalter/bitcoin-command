@@ -59,7 +59,7 @@ getDeviceData = (cuttoff, callback) ->
 				_id: 0
 				hostname: '$_id.hostname'
 				device: '$_id.device'
-				hashrate: $multiply: [ '$shares', 0.397682157037037 ]
+				hashrate: $multiply: [ '$shares', 1.193046471 ] # $shares * 2^32 / (3600) / 1000000
 				shares: 1
 				accepted: 1
 				rejected: 1
@@ -235,7 +235,7 @@ exports.summarydata = (req, res) ->
 					$project:
 						_id: 0
 						url: '$_id'
-						hashrate: $multiply: [ '$shares', 0.397682157037037 ] # $shares * 2^32 / (3600 * 3) / 1000000
+						hashrate: $multiply: [ '$shares', 1.193046471 ] # $shares * 2^32 / (3600) / 1000000
 						shares: 1
 						accepted: 1
 						rejected: 1
