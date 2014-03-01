@@ -59,7 +59,7 @@ getDeviceData = (cuttoff, callback) ->
 				_id: 0
 				hostname: '$_id.hostname'
 				device: '$_id.device'
-				hashrate: $multiply: [ '$shares', 1.193046471 ] # $shares * 2^32 / (3600) / 1000000
+				hashrate: $multiply: [ '$shares', 0.397682157037037 ]
 				shares: 1
 				accepted: 1
 				rejected: 1
@@ -73,7 +73,7 @@ updateMobileMiner = ->
 	mm = config.mobileMiner
 	return unless mm? and mm.apiKey? and mm.applicationKey and mm.email
 	console.log 'Updating MobileMiner.'
-	cuttoff = moment().subtract('hours', 1).unix()
+	cuttoff = moment().subtract('hours', 3).unix()
 	getDeviceData cuttoff, (err, data) ->
 		baseUrl = "https://mobileminer.azurewebsites.net"
 		client = request.newClient baseUrl
@@ -186,7 +186,7 @@ exports.submitshare = (req, res) ->
 	res.json result: true
 
 exports.summarydata = (req, res) ->
-	cuttoff = moment().subtract('hours', 1).unix()
+	cuttoff = moment().subtract('hours', 3).unix()
 	client = new BitcoinClient config.bitcoin
 
 	async.parallel({
@@ -235,7 +235,7 @@ exports.summarydata = (req, res) ->
 					$project:
 						_id: 0
 						url: '$_id'
-						hashrate: $multiply: [ '$shares', 1.193046471 ] # $shares * 2^32 / (3600) / 1000000
+						hashrate: $multiply: [ '$shares', 0.397682157037037 ] # $shares * 2^32 / (3600 * 3) / 1000000
 						shares: 1
 						accepted: 1
 						rejected: 1
