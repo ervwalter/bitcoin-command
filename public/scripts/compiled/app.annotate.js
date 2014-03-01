@@ -429,7 +429,14 @@
     '$timeout',
     'walletInfo',
     function ($scope, popups, $location, $timeout, walletInfo) {
-      $scope.tx = {};
+      var query;
+      query = $location.search();
+      $scope.tx = {
+        address: query.to,
+        name: query.label,
+        amount: query.amount,
+        comment: query.message
+      };
       $scope.status = {};
       $scope.wallet = walletInfo.getSummary(1);
       $scope.recentRecipients = walletInfo.getRecentRecipients();
@@ -553,10 +560,15 @@
       $scope.clearFilterTerm = function () {
         return $scope.filterTerm = '';
       };
-      return $scope.filterTermKeyDown = function (event) {
+      $scope.filterTermKeyDown = function (event) {
         if (event.keyCode === 27) {
           return $scope.clearFilterTerm();
         }
+      };
+      return $scope.registerProtocol = function () {
+        var uri;
+        uri = '' + window.location.protocol + '//' + window.location.host + '/wallet/bitcoinlink?uri=%s';
+        return window.navigator.registerProtocolHandler('bitcoin', uri, 'Bitcoin Command');
       };
     }
   ]);

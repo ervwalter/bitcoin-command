@@ -3,21 +3,25 @@
 ###
 bitcoinApp.controller 'WalletCtrl', ($scope, walletInfo, popups) ->
 
-    $scope.count = 50
-    $scope.wallet = walletInfo.getSummary($scope.count)
-    $scope.filterTerm = ''
+	$scope.count = 50
+	$scope.wallet = walletInfo.getSummary($scope.count)
+	$scope.filterTerm = ''
 
-    $scope.newAddress = ->
-        popups.newAddress().open()
+	$scope.newAddress = ->
+		popups.newAddress().open()
 
-    $scope.show = (count) ->
-        $(document.body).addClass('wait')
-        $scope.wallet.$get({show: count}).then ->
-            $scope.count = count
-            $(document.body).removeClass('wait')
+	$scope.show = (count) ->
+		$(document.body).addClass('wait')
+		$scope.wallet.$get({show: count}).then ->
+			$scope.count = count
+			$(document.body).removeClass('wait')
 
-    $scope.clearFilterTerm = ->
-        $scope.filterTerm = ''
+	$scope.clearFilterTerm = ->
+		$scope.filterTerm = ''
 
-    $scope.filterTermKeyDown = (event) ->
-        $scope.clearFilterTerm() if event.keyCode is 27
+	$scope.filterTermKeyDown = (event) ->
+		$scope.clearFilterTerm() if event.keyCode is 27
+
+	$scope.registerProtocol = ->
+		uri = "#{window.location.protocol}//#{window.location.host}/wallet/bitcoinlink?uri=%s"
+		window.navigator.registerProtocolHandler("bitcoin", uri, 'Bitcoin Command');

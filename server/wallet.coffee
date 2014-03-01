@@ -3,6 +3,7 @@ async = require('async')
 BitcoinClient = require('bitcoin').Client
 moment = require('moment')
 request = require('request-json')
+url = require('url')
 
 _ = require('./underscore-plus')
 db = require('./db')
@@ -272,3 +273,9 @@ exports.newAddress = (req, res) ->
 	return
 
 
+exports.bitcoinLink = (req, res) ->
+	bitcoinUri = req.query.uri
+	console.log bitcoinUri
+	bitcoinUriPieces = url.parse(bitcoinUri)
+	res.redirect "/#/wallet/send?to=#{encodeURIComponent(bitcoinUriPieces.host)}&#{bitcoinUriPieces.query}"
+	return

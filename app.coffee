@@ -43,6 +43,7 @@ app.post '/submitshare', noCache, mining.submitshare
 app.get '/mining/summary', noCache, security.requireAuthentication, mining.summarydata
 app.get '/mining/chart', noCache, security.requireAuthentication, mining.chartdata
 
+app.get '/wallet/bitcoinlink', noCache, security.requireAuthentication, wallet.bitcoinLink
 app.get '/wallet/summary', noCache, security.requireAuthentication, wallet.summary
 app.get '/wallet/price', noCache, security.requireAuthentication, wallet.price
 app.get '/wallet/recentRecipients', noCache, security.requireAuthentication, wallet.recentRecipients

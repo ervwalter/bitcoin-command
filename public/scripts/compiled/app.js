@@ -432,7 +432,14 @@
 
 
   bitcoinApp.controller('SendCtrl', function($scope, popups, $location, $timeout, walletInfo) {
-    $scope.tx = {};
+    var query;
+    query = $location.search();
+    $scope.tx = {
+      address: query.to,
+      name: query.label,
+      amount: query.amount,
+      comment: query.message
+    };
     $scope.status = {};
     $scope.wallet = walletInfo.getSummary(1);
     $scope.recentRecipients = walletInfo.getRecentRecipients();
@@ -486,32 +493,32 @@
   });
 
   /*
-      $scope.recentRecipients = {
-          name: 'recentRecipients'
-          prefetch: {
-              url: '/wallet/recentRecipients'
-              filter: (response) ->
-                  _.map response, (item) ->
-                      {
-                          value: item.address
-                          name: item.name
-                          address: item.address
-                          shortAddress: item.address.substr(0, 10) + '...'
-                          tokens: _.union(item.name.split(' '))
-                      }
-              ttl: 0
-          }
-          header: '<h3>Recent Recipients</h3>'
-          template: [
-              '<span>'
-              '<span class="address-name">[[name]]</span>'
-              ' - '
-              '<span class="address-value visible-desktop">[[address]]</span>'
-              '<span class="address-value hidden-desktop">[[shortAddress]]</span>'
-              '</span>'
-          ].join('')
-          engine: HoganWrapper
-      }
+  	$scope.recentRecipients = {
+  		name: 'recentRecipients'
+  		prefetch: {
+  			url: '/wallet/recentRecipients'
+  			filter: (response) ->
+  				_.map response, (item) ->
+  					{
+  						value: item.address
+  						name: item.name
+  						address: item.address
+  						shortAddress: item.address.substr(0, 10) + '...'
+  						tokens: _.union(item.name.split(' '))
+  					}
+  			ttl: 0
+  		}
+  		header: '<h3>Recent Recipients</h3>'
+  		template: [
+  			'<span>'
+  			'<span class="address-name">[[name]]</span>'
+  			' - '
+  			'<span class="address-value visible-desktop">[[address]]</span>'
+  			'<span class="address-value hidden-desktop">[[shortAddress]]</span>'
+  			'</span>'
+  		].join('')
+  		engine: HoganWrapper
+  	}
   */
 
 
@@ -588,10 +595,15 @@
     $scope.clearFilterTerm = function() {
       return $scope.filterTerm = '';
     };
-    return $scope.filterTermKeyDown = function(event) {
+    $scope.filterTermKeyDown = function(event) {
       if (event.keyCode === 27) {
         return $scope.clearFilterTerm();
       }
+    };
+    return $scope.registerProtocol = function() {
+      var uri;
+      uri = "" + window.location.protocol + "//" + window.location.host + "/wallet/bitcoinlink?uri=%s";
+      return window.navigator.registerProtocolHandler("bitcoin", uri, 'Bitcoin Command');
     };
   });
 

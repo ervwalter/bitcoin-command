@@ -3,21 +3,21 @@
         <form name="form" valid-submit="send(tx)" autocomplete="off">
             <fieldset>
                 <legend>Send Bitcoins  <div class="summary">Available Balance: <b>{{ wallet.balance }}</b></div></legend>
-                <control-group for="address">
+                <control-group for="recipient">
                     <div class="controls" id="addressFields">
-                        <input type="text" name="address" class="span4" ng-model="tx.address"
-                               placeholder="Address" ng-required="true"
+                        <input type="text" name="recipient" class="span4" ng-model="tx.address"
+                               placeholder="Recipient Address" ng-required="true"
                                typeahead="item.address as item.name + ' - ' + item.address for item in recentRecipients | filter:$viewValue | limitTo:8"
                                typeahead-on-select="selectedAddress($item)"
                                autofocus="true" ng-disabled="sending" />
-                        <validation-message for="address" required="Address is required."
+                        <validation-message for="recipient" required="Address is required."
                                 pattern="Enter a valid bitcoin address"/>
                     </div>
                 </control-group>
-                <control-group for="name">
+                <control-group for="recipientLabel">
                     <div class="controls">
-                        <input type="text" name="name" class="span4" ng-model="tx.name"
-                               placeholder="Name" ng-disabled="sending" />
+                        <input type="text" name="recipientLabel" class="span4" ng-model="tx.name"
+                               placeholder="Recipient Name" ng-disabled="sending" />
                     </div>
                 </control-group>
                 <control-group for="amount">
