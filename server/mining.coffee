@@ -79,10 +79,10 @@ updateMobileMiner = ->
 		client = request.newClient baseUrl
 		hosts = _.chain(data).sortBy((item) -> item.id).groupBy('hostname').value()
 		now = moment().unix()
+		path = "/api/MiningStatisticsInput?emailAddress=#{mm.email}&applicationKey=#{mm.applicationKey}&apiKey=#{mm.apiKey}"
+		console.log baseUrl, path
+		data = []
 		for host, devices of hosts
-			path = "/api/MiningStatisticsInput?emailAddress=#{mm.email}&applicationKey=#{mm.applicationKey}&machineName=#{host}&apiKey=#{mm.apiKey}"
-			console.log baseUrl, path
-			data = []
 			for device in devices
 				status = "Alive"
 				enabled = true
@@ -94,6 +94,7 @@ updateMobileMiner = ->
 				else if device.hashrate < 100
 					status = "Low Hashrate"
 				data.push {
+					MachineName: host
 					MinerName: 'BitcoinCommand'
 					CoinSymbol: 'BTC'
 					CoinName: 'Bitcoin'
@@ -112,10 +113,9 @@ updateMobileMiner = ->
 					HardwareErrors: 0
 
 				}
-			console.log data
-			client.post path, data, (err, res, body) ->
-				console.log res.statusCode
-				console.log body
+		client.post path, data, (err, res, body) ->
+			console.log res.statusCode
+			console.log body
 
 	return
 
